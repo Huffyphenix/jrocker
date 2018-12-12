@@ -1,4 +1,4 @@
-FROM bioconductor/release_core2:latest
+FROM bioconductor/release_base2:latest
 MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
 ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
 
@@ -12,6 +12,22 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libpq-dev \
   libssh2-1-dev \
   unixodbc-dev \
+  && echo '\n \
+  \n# Blogdown options -------------------------------------------------------- \
+  \noptions(blogdown.author = "Chun-Jie Liu") \
+  \noptions(servr.daemon = FALSE) \
+  \noptions(blogdown.ext = ".Rmd") \
+  \noptions(blogdown.subdir = "post") \
+  \noptions(blogdown.yaml.empty = TRUE) \
+  \n# General options --------------------------------------------------------- \
+  \noptions(repos = c(CRAN = "https://cloud.r-project.org"), download.file.method = "libcurl") \
+  \noptions(prompt = "Jrocker>", digits = 4, show.signif.stars = FALSE) \
+  \noptions(stringsAsFactors = FALSE) \
+  \n# ggplot2 v3 options ------------------------------------------------------ \
+  \noptions( \
+  \n  ggplot2.continuous.color = "viridis", \
+  \n  ggplot2.continuous.fill = "viridis" \
+  \n)' >> /usr/local/lib/R/etc/Rprofile.site \
   && install2.r --error \
     --deps TRUE \
     tidyverse \
@@ -20,64 +36,13 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     formatR \
     remotes \
     selectr \
-    caTools 
+    caTools \
+    BiocManager
 
-## Add LaTeX, rticles and bookdown support
-RUN wget "https://travis-bin.yihui.name/texlive-local.deb" \
-  && dpkg -i texlive-local.deb \
-  && rm texlive-local.deb \
-  && apt-get update \
-  && apt-get install -y --no-install-recommends \
-    ## for rJava
-    default-jdk \
-    ## Nice Google fonts
-    fonts-roboto \
-    ## used by some base R plots
-    ghostscript \
-    ## used to build rJava and other packages
-    libbz2-dev \
-    libicu-dev \
-    liblzma-dev \
-    ## system dependency of hunspell (devtools)
-    libhunspell-dev \
-    ## system dependency of hadley/pkgdown
-    libmagick++-dev \
-    ## rdf, for redland / linked data
-    librdf0-dev \
-    ## for V8-based javascript wrappers
-    libv8-dev \
-    ## R CMD Check wants qpdf to check pdf sizes, or throws a Warning
-    qpdf \
-    ## For building PDF manuals
-    texinfo \
-    ## for git via ssh key
-    ssh \
- ## just because
-    less \
-    vim \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/ \
-  ## Use tinytex for LaTeX installation
-  && install2.r --error tinytex \
-  ## Admin-based install of TinyTeX:
-  && wget -qO- \
-    "https://github.com/yihui/tinytex/raw/master/tools/install-unx.sh" | \
-    sh -s - --admin --no-path \
-  && mv ~/.TinyTeX /opt/TinyTeX \
-  && /opt/TinyTeX/bin/*/tlmgr path add \
-  && tlmgr install metafont mfware inconsolata tex ae parskip listings \
-  && tlmgr path add \
-  && Rscript -e "tinytex::r_texmf()" \
-  && chown -R root:staff /opt/TinyTeX \
-  && chown -R root:staff /usr/local/lib/R/site-library \
-  && chmod -R g+w /opt/TinyTeX \
-  && chmod -R g+wx /opt/TinyTeX/bin \
-  && echo "PATH=${PATH}" >> /usr/local/lib/R/etc/Renviron \
-  && install2.r --error PKI \
-  ## And some nice R packages for publishing-related stuff
-  && install2.r --error --deps TRUE \
-    bookdown rticles rmdshower
+ADD install-bioc.R /tmp/
+RUN R -f /tmp/install-bioc.R
 
 
 # build docker image
 # docker build -t jrocker:0.1.0 .
+# jrocker for bioc-docker and rocker/tidyverse 0.1.0
