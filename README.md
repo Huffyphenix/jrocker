@@ -23,7 +23,7 @@ World is better after build done.
 ## Run Jrocker
 
 ```Shell
-docker pull chunjiesamliu/Jrocker
+docker pull chunjiesamliu/jrocker
 
-docker run -d -p 8686:8787 -v /your/path/:/docker/path/ -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE --name Jrocker chunjiesamliu/Jrocker
+docker run -d -p 8686:8787 -v /your/path/:/docker/path/ -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE --name Jrocker chunjiesamliu/jrocker
 ```
