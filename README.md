@@ -14,9 +14,7 @@ Review the Biocondutor release core [`Dockerfile`](https://github.com/Bioconduct
 
 2. Integrating [rocker/verse](https://github.com/rocker-org/rocker-versioned/blob/master/verse/devel/Dockerfile) is not work for now. May add it after [ctan.org](http://ctan.org) accessible.
 
-3. Frequent use Bioc package is provided in the [install-bioc.R](./install-bioc.R). It can be update regularly.
-
-4. Other useful packages may provide in the [install-pkgs.R](./install-pkgs.R). Not provided for now.
+3. Outside packages may provide in the [install-pkgs.R](./install-pkgs.R).
 
 World is better after build done.
 
@@ -36,7 +34,7 @@ docker run -it --rm chunjiesamliu/jrocker /bin/bash
 docker run -d -p 8686:8787 \
   -v /home/liucj/:/home/liucj/ \
   -e USER=liucj -e PASSWORD=<password> \
-  -e USERID=$EUID -e GROUPID=$EUID -e ROOT=TRUE \
+  -e USERID=$EUID -e ROOT=TRUE \
   --name Jrocker chunjiesamliu/jrocker
 ```
 
