@@ -1,17 +1,48 @@
-pkgs <- c(
 
-  # machine-learing
-  'e1071',
-  'mlr'
-)
-mirror <- 'https://cloud.r-project.org'
-ap.db <- available.packages(contrib.url(mirror))
+pkgs <- c(
+    "OrganismDbi",
+    "ExperimentHub",
+    "Biobase",
+    "BiocParallel",
+    "biomaRt",
+    "Biostrings",
+    "BSgenome",
+    "ShortRead",
+    "IRanges",
+    "GenomicRanges",
+    "GenomicAlignments",
+    "GenomicFeatures",
+    "SummarizedExperiment",
+    "VariantAnnotation",
+    "DelayedArray",
+    "GSEABase",
+    "Gviz",
+    "graph",
+    "RBGL",
+    "Rgraphviz",
+    "rmarkdown",
+    "httr",
+    "knitr",
+    "BiocStyle",
+    # Jrocker add
+    "MLSeq",
+    "ballgown",
+    "clusterProfiler",
+
+    # machine-learing
+    'e1071',
+    'mlr'
+    )
+
+ap.db <- available.packages(contrib.url(BiocManager::repositories()))
 ap <- rownames(ap.db)
 
 pkgs_to_install <- pkgs[pkgs %in% ap]
 
-install.packages(pkgs = pkgs_to_install, repos = mirror)
+BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
 
+# just in case there were warnings, we want to see them
+# without having to scroll up:
 warnings()
 
 if (!is.null(warnings()))
@@ -20,3 +51,5 @@ if (!is.null(warnings()))
     if (length(grep("is not available|had non-zero exit status", w)))
         quit("no", 1L)
 }
+
+suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))

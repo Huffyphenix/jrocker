@@ -12,6 +12,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libpq-dev \
   libssh2-1-dev \
   unixodbc-dev \
+  ## For units
+  libudunits2-dev \ 
+  && rm -rf /var/lib/apt/lists/* \
   && echo '\n \
   \n# Blogdown options -------------------------------------------------------- \
   \noptions(blogdown.author = "Chun-Jie Liu") \
@@ -40,9 +43,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     BiocManager
 
 COPY install-bioc.R install-pkgs.R /tmp/
-RUN R -f /tmp/install-bioc.R \
-  && R -f /tmp/install-pkgs.R \
-  && rm -rf /tmp/*
+RUN R -f /tmp/install-pkgs.R
 
 # jrocker for bioc-docker and rocker/tidyverse 0.2.0
 # build docker image
