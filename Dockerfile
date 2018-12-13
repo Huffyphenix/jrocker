@@ -2,7 +2,8 @@ FROM bioconductor/release_base2:latest
 MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
 
 ## tidyverse
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+RUN apt-get update -qq \
+  && apt-get -y --no-install-recommends install \
   libxml2-dev \
   libcairo2-dev \
   libsqlite3-dev \
@@ -13,29 +14,11 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   unixodbc-dev \
   ## For units
   libudunits2-dev \
-  apt-utils \
-  ## verse deps
-  ## for rJava
-  default-jdk \
-  ## Nice Google fonts
-  ghostscript \
-  ## used to build rJava and other packages
-  libbz2-dev \
-  libicu-dev \
-  liblzma-dev \
-  ## system dependency of hunspell (devtools)
-  libhunspell-dev \
-  ## system dependency of hadley/pkgdown
-  libmagick++-dev \
-  ## rdf, for redland / linked data
-  librdf0-dev \
-  ## for V8-based javascript wrappers
-  libv8-dev \
-  ## for git via ssh key
   ssh \
-## just because
   less \
   vim \
+  && apt-get clean \
+  && apt-get autoremove \
   && rm -rf /var/lib/apt/lists/* \
   && echo '\n \
   \n# Blogdown options -------------------------------------------------------- \
