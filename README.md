@@ -8,7 +8,7 @@ Docker provides perfect solution. I'm newbie to the docker. The basic demands is
 
 Another key import question is that it's hard to install [Biocondutor](http://bioconductor.org/) packages based on the raw `rocker images`. Search again, Biocondutor provides `core & base docker images` based on the [`rocker/rstudio`](https://hub.docker.com/r/rocker/rstudio/).
 
-Review the Biocondutor release core [`Dockerfile`](https://github.com/Bioconductor/bioc_docker/blob/master/out/release_core/Dockerfile) code. I plan to build personal running environment for myself [Jrocker](https://github.com/chunjie-sam-liu/jrocker).
+Review the Biocondutor release core [`Dockerfile`](https://github.com/Bioconductor/bioc_docker/blob/master/out/release_core/Dockerfile) code. I plan to build personal running environment for myself [Jrocker](https://hub.docker.com/r/chunjiesamliu/jrocker/).
 
 1. Build based on [bioc base2 docker](https://hub.docker.com/r/bioconductor/release_core2/) and integrate [tidyverse enviroment](https://github.com/rocker-org/rocker-versioned/blob/master/tidyverse/devel/Dockerfile).
 
