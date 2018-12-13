@@ -1,6 +1,5 @@
 FROM bioconductor/release_base2:latest
 MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
-ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
 
 ## tidyverse
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
@@ -13,7 +12,36 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libssh2-1-dev \
   unixodbc-dev \
   ## For units
-  libudunits2-dev \ 
+  libudunits2-dev \
+  ## verse deps
+  ## for rJava
+  default-jdk \
+  ## Nice Google fonts
+  fonts-roboto \
+  ## used by some base R plots
+  ghostscript \
+  ## used to build rJava and other packages
+  libbz2-dev \
+  libicu-dev \
+  liblzma-dev \
+  ## system dependency of hunspell (devtools)
+  libhunspell-dev \
+  ## system dependency of hadley/pkgdown
+  libmagick++-dev \
+  ## rdf, for redland / linked data
+  librdf0-dev \
+  ## for V8-based javascript wrappers
+  libv8-dev \
+  ## R CMD Check wants qpdf to check pdf sizes, or throws a Warning
+  qpdf \
+  ## For building PDF manuals
+  texinfo \
+  ## for git via ssh key
+  ssh \
+## just because
+  less \
+  vim \
+  && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && echo '\n \
   \n# Blogdown options -------------------------------------------------------- \
@@ -40,7 +68,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     remotes \
     selectr \
     caTools \
-    BiocManager
+    BiocManager 
+
 
 COPY install-pkgs.R /tmp/
 RUN R -f /tmp/install-pkgs.R

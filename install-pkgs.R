@@ -31,6 +31,7 @@ pkgs <- c(
 
     # machine-learing
     'e1071',
+    'kernlab',
     'mlr'
     )
 

@@ -50,9 +50,7 @@ docker run -i --rm --user $EUID \
 ## Build jrocker
 
 ```shell
-docker build -t jrocker:0.2.0 .
-
-docker tag jrocker:0.2.0 chunjiesamliu/jrocker:latest
+docker build -t chunjiesamliu/jrocker:latest .
 
 docker push chunjiesamliu/jrocker:latest
 ```
