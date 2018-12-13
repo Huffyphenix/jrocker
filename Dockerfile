@@ -1,12 +1,8 @@
 FROM bioconductor/release_base2:latest
 MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
-ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
 
 ## tidyverse
-RUN wget "https://travis-bin.yihui.name/texlive-local.deb" \
-  && dpkg -i texlive-local.deb \
-  && rm texlive-local.deb \
-  && apt-get update -qq && apt-get -y --no-install-recommends install \
+RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
   libcairo2-dev \
   libsqlite3-dev \
@@ -46,7 +42,6 @@ RUN wget "https://travis-bin.yihui.name/texlive-local.deb" \
 ## just because
   less \
   vim \
-  && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && echo '\n \
   \n# Blogdown options -------------------------------------------------------- \
