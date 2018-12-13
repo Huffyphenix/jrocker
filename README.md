@@ -22,8 +22,28 @@ World is better after build done.
 
 ## Run Jrocker
 
-```Shell
-docker pull chunjiesamliu/jrocker
+```shell
+docker pull chunjiesamliu/jrocker:latest
 
-docker run -d -p 8686:8787 -v /your/path/:/docker/path/ -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE --name Jrocker chunjiesamliu/jrocker
+docker run -it --rm chunjiesamliu/jrocker /usr/local/bin/R
+
+docker run -it --rm chunjiesamliu/jrocker /bin/bash
+```
+
+### Run rstudio server
+
+```shell
+docker run -d -p 8686:8787 \ 
+  -v /your/path/:/docker/path/ \ 
+  -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE \
+  --name Jrocker chunjiesamliu/jrocker
+```
+
+### Run R scripts
+
+```shell
+docker run -i --rm --user $EUID \ 
+  --entrypoint /usr/local/bin/Rscript \ 
+  -v /your/path/:/docker/path/ \ 
+  chunjiesamliu/jrocker /docker/path/product.R
 ```
