@@ -44,7 +44,6 @@ RUN R -f /tmp/install-bioc.R \
   && R -f /tmp/install-pkgs.R \
   && rm -rf /tmp/*
 
-
-# build docker image
-# docker build -t jrocker:0.2.0 .
 # jrocker for bioc-docker and rocker/tidyverse 0.2.0
+# build docker image
+

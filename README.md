@@ -47,3 +47,13 @@ docker run -i --rm --user $EUID \
   -v /your/path/:/docker/path/ \ 
   chunjiesamliu/jrocker /docker/path/product.R
 ```
+
+## Build jrocker
+
+```shell
+docker build -t jrocker:0.2.0 .
+
+docker tag jrocker:0.2.0 chunjiesamliu/jrocker:latest
+
+docker push chunjiesamliu/jrocker:latest
+```
