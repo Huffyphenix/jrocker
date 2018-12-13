@@ -34,8 +34,9 @@ docker run -it --rm chunjiesamliu/jrocker /bin/bash
 
 ```shell
 docker run -d -p 8686:8787 \
-  -v /your/path/:/docker/path/ \
-  -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE \
+  -v /home/liucj/:/home/liucj/ \
+  -e USER=liucj -e PASSWORD=<password> \
+  -e USERID=$EUID -e GROUPID=$EUID -e ROOT=TRUE \
   --name Jrocker chunjiesamliu/jrocker
 ```
 
