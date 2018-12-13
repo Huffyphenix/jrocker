@@ -18,8 +18,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   ## for rJava
   default-jdk \
   ## Nice Google fonts
-  fonts-roboto \
-  ## used by some base R plots
   ghostscript \
   ## used to build rJava and other packages
   libbz2-dev \
@@ -33,10 +31,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   librdf0-dev \
   ## for V8-based javascript wrappers
   libv8-dev \
-  ## R CMD Check wants qpdf to check pdf sizes, or throws a Warning
-  qpdf \
-  ## For building PDF manuals
-  texinfo \
   ## for git via ssh key
   ssh \
 ## just because

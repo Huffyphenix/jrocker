@@ -33,7 +33,9 @@ pkgs <- c(
     'e1071',
     'kernlab',
     'mlr',
-    'randomForest'
+    'randomForest',
+    'FactoMineR',
+    'factoextra'
     )
 
 
