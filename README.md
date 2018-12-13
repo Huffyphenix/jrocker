@@ -4,7 +4,7 @@ Install packages and dependencies is painful. It's OK to run the project after m
 
 Above experienced pain is what I suffered, many times. An universe solution is packing environment portable that can be run after cloning the environment.
 
-Docker provides perfect solution. I'm newbie to the docker. The basic demands is that the `tidyverse suite`, `rstudio server` `shiny server` are integrated in the image. The [rocker-org](https://github.com/rocker-org/rocker) kindly prebuilt all images satisfis me.
+Docker provides perfect solution. I'm newbie to the docker. The basic demands is that the `tidyverse suite`, `rstudio server` and `shiny server` are integrated in the image. The [rocker-org](https://github.com/rocker-org/rocker) kindly prebuilt all images satisfis me.
 
 Another key import question is that it's hard to install Bioconduter packages based on the raw `rocker images`. Search again, Bioconducter provides `core & base docker images` based on the [`rocker/rstudio`](https://hub.docker.com/r/rocker/rstudio/).
 
