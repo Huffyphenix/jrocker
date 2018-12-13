@@ -39,10 +39,12 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     caTools \
     BiocManager
 
-COPY install-bioc.R /tmp/
-RUN R -f /tmp/install-bioc.R
+COPY install-bioc.R install-pkgs.R /tmp/
+RUN R -f /tmp/install-bioc.R \
+  && R -f /tmp/install-pkgs.R \
+  && rm -rf /tmp/*
 
 
 # build docker image
-# docker build -t jrocker:0.1.0 .
-# jrocker for bioc-docker and rocker/tidyverse 0.1.0
+# docker build -t jrocker:0.2.0 .
+# jrocker for bioc-docker and rocker/tidyverse 0.2.0
