@@ -35,12 +35,17 @@ pkgs <- c(
     'mlr'
     )
 
+
+
 ap.db <- available.packages(contrib.url(BiocManager::repositories()))
 ap <- rownames(ap.db)
 
 pkgs_to_install <- pkgs[pkgs %in% ap]
 
 BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
+
+# From github
+devtools::install_github("hadley/multidplyr")
 
 # just in case there were warnings, we want to see them
 # without having to scroll up:

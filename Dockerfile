@@ -1,8 +1,12 @@
 FROM bioconductor/release_base2:latest
 MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
+ENV PATH=$PATH:/opt/TinyTeX/bin/x86_64-linux/
 
 ## tidyverse
-RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+RUN wget "https://travis-bin.yihui.name/texlive-local.deb" \
+  && dpkg -i texlive-local.deb \
+  && rm texlive-local.deb \
+  && apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
   libcairo2-dev \
   libsqlite3-dev \
@@ -13,6 +17,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   unixodbc-dev \
   ## For units
   libudunits2-dev \
+  apt-utils \
   ## verse deps
   ## for rJava
   default-jdk \
@@ -68,6 +73,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     remotes \
     selectr \
     caTools \
+    pryr \
     BiocManager 
 
 
