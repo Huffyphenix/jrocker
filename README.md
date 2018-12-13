@@ -33,8 +33,8 @@ docker run -it --rm chunjiesamliu/jrocker /bin/bash
 ### Run rstudio server
 
 ```shell
-docker run -d -p 8686:8787 \ 
-  -v /your/path/:/docker/path/ \ 
+docker run -d -p 8686:8787 \
+  -v /your/path/:/docker/path/ \
   -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE \
   --name Jrocker chunjiesamliu/jrocker
 ```
@@ -42,9 +42,9 @@ docker run -d -p 8686:8787 \
 ### Run R scripts
 
 ```shell
-docker run -i --rm --user $EUID \ 
-  --entrypoint /usr/local/bin/Rscript \ 
-  -v /your/path/:/docker/path/ \ 
+docker run -i --rm --user $EUID \
+  --entrypoint /usr/local/bin/Rscript \
+  -v /your/path/:/docker/path/ \
   chunjiesamliu/jrocker /docker/path/product.R
 ```
 
