@@ -39,7 +39,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     caTools \
     BiocManager
 
-ADD install-bioc.R /tmp/
+COPY install-bioc.R /tmp/
 RUN R -f /tmp/install-bioc.R
 
 

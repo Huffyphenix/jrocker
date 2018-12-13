@@ -25,7 +25,11 @@ pkgs <- c(
     "rmarkdown",
     "httr",
     "knitr",
-    "BiocStyle"
+    "BiocStyle",
+    # new add
+    "MLSeq",
+    "ballgown",
+    "clusterProfiler"
     )
 
 ap.db <- available.packages(contrib.url(BiocManager::repositories()))

@@ -4,3 +4,6 @@ Jrocker is R running enviroment built with rstudio, tidyverse and bioconductor. 
 
 It's built on [`bioconductor/release_base2:latest`](https://hub.docker.com/r/bioconductor/release_core2/~/dockerfile/) which based on the [`rocker/rstudio`](https://hub.docker.com/r/rocker/rstudio/).
 
+## Run rstudio
+
+`docker run -d -p 8686:8787 -e USER=liucj -e PASSWORD=<password> -e ROOT=TRUE --name rstudio rocker/rstudio`
