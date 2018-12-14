@@ -1,7 +1,7 @@
 # Jrocker
 
 [![CircleCI](https://circleci.com/gh/chunjie-sam-liu/jrocker.svg?style=svg)](https://circleci.com/gh/chunjie-sam-liu/jrocker)
-[![](https://img.shields.io/docker/automated/chunjiesamliu/jrocker.svg)](https://hub.docker.com/r/chunjiesamliu/jrocker/builds)
+[![](https://img.shields.io/docker/automated/chunjiesamliu/jrocker.svg)](https://hub.docker.com/r/chunjiesamliu/jrocker)
 [![](https://images.microbadger.com/badges/image/chunjiesamliu/jrocker.svg)](https://microbadger.com/images/chunjiesamliu/jrocker)
 [![](https://img.shields.io/docker/pulls/chunjiesamliu/jrocker.svg)](https://hub.docker.com/r/chunjiesamliu/jrocker)
 [![](https://images.microbadger.com/badges/license/chunjiesamliu/jrocker.svg)](https://microbadger.com/images/chunjiesamliu/jrocker)
