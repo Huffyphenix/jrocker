@@ -1,5 +1,14 @@
 # Jrocker
 
+[![CircleCI](https://circleci.com/gh/chunjie-sam-liu/jrocker.svg?style=svg)](https://circleci.com/gh/chunjie-sam-liu/jrocker)
+[![](https://img.shields.io/docker/automated/chunjiesamliu/jrocker.svg)](https://hub.docker.com/r/chunjiesamliu/jrocker/builds)
+[![](https://images.microbadger.com/badges/image/chunjiesamliu/jrocker.svg)](https://microbadger.com/images/chunjiesamliu/jrocker)
+[![](https://img.shields.io/docker/pulls/chunjiesamliu/jrocker.svg)](https://hub.docker.com/r/chunjiesamliu/jrocker)
+[![](https://images.microbadger.com/badges/license/chunjiesamliu/jrocker.svg)](https://microbadger.com/images/chunjiesamliu/jrocker)
+[![](https://images.microbadger.com/badges/version/chunjiesamliu/jrocker.svg)](https://microbadger.com/images/chunjiesamliu/jrocker)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+
 Install packages and dependencies is painful. It's OK to run the project after misearable searching and installing `dependent libs`. However, you have access to mulitple different OSs. Some big data are not allowed to transfer outside. So you have to install the running environment again for the whole project. Looking back own techinical blogs may solve it quickily, but some errors that you did't take the notes. You'll suffer installing & searching problem again and agian.
 
 Above pains are what I suffered, **many times**. An universe solution is packing environment portable that can be run after cloning the environment.
