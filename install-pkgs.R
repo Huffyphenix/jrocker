@@ -28,6 +28,10 @@ pkgs <- c(
     "MLSeq",
     "ballgown",
     "clusterProfiler",
+    
+    #add by xiamx
+    "purrrlyr",
+    "LiblineaR",
 
     # machine-learing
     'e1071',
