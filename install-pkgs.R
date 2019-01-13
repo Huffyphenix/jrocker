@@ -40,7 +40,10 @@ pkgs <- c(
     'mlr',
     'randomForest',
     'FactoMineR',
-    'factoextra'
+    'factoextra',
+
+    # other packages
+    'openxlsx'
     )
 
 
