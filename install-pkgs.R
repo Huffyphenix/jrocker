@@ -29,7 +29,8 @@ pkgs <- c(
     "ballgown",
     "clusterProfiler",
     "IHW",
-    
+    "vsn",
+
     #add by xiamx
     "purrrlyr",
     "LiblineaR",
