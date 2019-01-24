@@ -28,6 +28,7 @@ pkgs <- c(
     "MLSeq",
     "ballgown",
     "clusterProfiler",
+	"IHW",
     
     #add by xiamx
     "purrrlyr",
@@ -37,6 +38,7 @@ pkgs <- c(
     'e1071',
     'kernlab',
     'mlr',
+	'mlbench',
     'randomForest',
     'FactoMineR',
     'factoextra',
