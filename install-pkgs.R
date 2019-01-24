@@ -33,6 +33,7 @@ pkgs <- c(
     #add by xiamx
     "purrrlyr",
     "LiblineaR",
+    "kerndwd",
 
     # machine-learing
     'e1071',
