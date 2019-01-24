@@ -30,6 +30,9 @@ pkgs <- c(
     "clusterProfiler",
     "IHW",
     "vsn",
+    "hexbin",
+    "pheatmap",
+    
 
     #add by xiamx
     "purrrlyr",
@@ -40,7 +43,7 @@ pkgs <- c(
     'e1071',
     'kernlab',
     'mlr',
-	'mlbench',
+    'mlbench',
     'randomForest',
     'FactoMineR',
     'factoextra',
