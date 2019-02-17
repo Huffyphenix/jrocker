@@ -32,6 +32,7 @@ pkgs <- c(
     "vsn",
     "hexbin",
     "pheatmap",
+	"survminer",
     
 
     #add by xiamx
@@ -49,7 +50,11 @@ pkgs <- c(
     'factoextra',
 
     # other packages
-    'openxlsx'
+    'openxlsx',
+
+	# addins
+	'colourpicker',
+	'styler'
     )
 
 
