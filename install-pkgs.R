@@ -28,33 +28,18 @@ pkgs <- c(
     "MLSeq",
     "ballgown",
     "clusterProfiler",
-    "IHW",
-    "vsn",
-    "hexbin",
-    "pheatmap",
-	"survminer",
-    
-
-    #add by xiamx
-    "purrrlyr",
-    "LiblineaR",
-    "kerndwd",
 
     # machine-learing
     'e1071',
     'kernlab',
     'mlr',
-    'mlbench',
     'randomForest',
     'FactoMineR',
     'factoextra',
 
     # other packages
     'openxlsx',
-
-	# addins
-	'colourpicker',
-	'styler'
+    'gt'
     )
 
 
