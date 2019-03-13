@@ -36,6 +36,8 @@ pkgs <- c(
     'randomForest',
     'FactoMineR',
     'factoextra',
+	'caret',
+	'AppliedPredictiveModeling',
 
     # other packages
     'openxlsx',
