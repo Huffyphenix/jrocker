@@ -11,13 +11,13 @@
 [![DOI](https://zenodo.org/badge/161434844.svg)](https://zenodo.org/badge/latestdoi/161434844)
 
 
-Install packages and dependencies is painful. It's OK to run the project after misearable searching and installing `dependent libs`. However, you have access to mulitple different OSs. Some big data are not allowed to transfer outside. So you have to install the running environment again for the whole project. Looking back own techinical blogs may solve it quickily, but some errors that you did't take the notes. You'll suffer installing & searching problem again and agian.
+Install packages and dependencies is painful. It's OK to run the project after misearable searching and installing `dependent libs`. However, you have accesses to mulitple different OSs. Some big data are not allowed to transfer outside. So you have to install the running environment again for the whole project. Looking back own techinical blogs may solve it quickily, but some errors that you did't take the notes. You'll suffer installing & searching problem again and agian.
 
 Above pains are what I suffered, **many times**. An universe solution is packing environment portable that can be run after cloning the environment.
 
-Docker provides perfect solution. I'm newbie to the docker. The basic demands is that the `tidyverse suite`, `rstudio server` and `shiny server` are integrated in the images. The [rocker-org](https://github.com/rocker-org/rocker) kindly pre-built all images satisfies me.
+Docker provides perfect solution. I'm newbie to the docker. The basic demands are that the `tidyverse suite`, `rstudio server` and `shiny server` are integrated in the images. The [rocker-org](https://github.com/rocker-org/rocker) kindly pre-built all images satisfy me.
 
-Another key import question is that it's hard to install [Biocondutor](http://bioconductor.org/) packages based on the raw `rocker images`. Search again, Biocondutor provides `core & base docker images` based on the [`rocker/rstudio`](https://hub.docker.com/r/rocker/rstudio/).
+Another key import question is that it's hard to install [Biocondutor](http://bioconductor.org/) packages based on the raw `rocker images`. Searching again, Biocondutor provides `core & base docker images` based on the [`rocker/rstudio`](https://hub.docker.com/r/rocker/rstudio/).
 
 Review the Biocondutor release core [`Dockerfile`](https://github.com/Bioconductor/bioc_docker/blob/master/out/release_core/Dockerfile) code. I plan to build personal running environment for myself [Jrocker](https://hub.docker.com/r/chunjiesamliu/jrocker/).
 
@@ -25,7 +25,7 @@ Review the Biocondutor release core [`Dockerfile`](https://github.com/Bioconduct
 
 2. Integrating [rocker/verse](https://github.com/rocker-org/rocker-versioned/blob/master/verse/devel/Dockerfile) is not work for now. May add it after [ctan.org](http://ctan.org) accessible.
 
-3. Outside packages may provide in the [install-pkgs.R](./install-pkgs.R).
+3. Outside packages are provided in the [install-pkgs.R](./install-pkgs.R).
 
 World is better after build done.
 
