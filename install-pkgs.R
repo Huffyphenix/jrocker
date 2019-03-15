@@ -33,11 +33,16 @@ pkgs <- c(
     'e1071',
     'kernlab',
     'mlr',
+    'mlbench',
     'randomForest',
     'FactoMineR',
     'factoextra',
-	'caret',
-	'AppliedPredictiveModeling',
+    'caret',
+    'AppliedPredictiveModeling',
+    'gbm',
+    'clue',
+    'clValid',
+    'clusterSim',
 
     # other packages
     'openxlsx',
