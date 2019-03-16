@@ -48,7 +48,8 @@ pkgs <- c(
     # other packages
     'openxlsx',
     'gt',
-    'GGally'
+    'GGally',
+    'ggvis'
     )
 
 
