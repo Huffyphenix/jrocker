@@ -28,6 +28,7 @@ pkgs <- c(
     "MLSeq",
     "ballgown",
     "clusterProfiler",
+    'rJava',
 
     # machine-learing
     'e1071',
@@ -44,6 +45,11 @@ pkgs <- c(
     'clValid',
     'clusterSim',
     'PMCMR',
+    'ranger',
+    'cmaes',
+    'irace',
+    'emoa',
+    'FSelector',
 
     # other packages
     'openxlsx',

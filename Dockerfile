@@ -4,6 +4,10 @@ MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
 ## tidyverse
 RUN apt-get update -qq \
   && apt-get -y --no-install-recommends install \
+  openjdk-8-jdk \
+  openjdk-8-jre \
+  libbz2-dev \
+  liblzma-dev \
   libxml2-dev \
   libcairo2-dev \
   libsqlite3-dev \
