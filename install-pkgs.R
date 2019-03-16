@@ -43,10 +43,12 @@ pkgs <- c(
     'clue',
     'clValid',
     'clusterSim',
+    'PMCMR',
 
     # other packages
     'openxlsx',
-    'gt'
+    'gt',
+    'GGally'
     )
 
 
