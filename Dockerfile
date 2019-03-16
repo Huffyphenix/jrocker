@@ -6,6 +6,8 @@ RUN apt-get update -qq \
   && apt-get -y --no-install-recommends install \
   openjdk-8-jdk \
   openjdk-8-jre \
+  mesa-common-dev \
+  libglu1-mesa-dev \
   libbz2-dev \
   liblzma-dev \
   libxml2-dev \
