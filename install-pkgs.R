@@ -47,6 +47,7 @@ pkgs <- c(
     'mlr',
     'mlbench',
     'randomForest',
+    'randomForestSRC',
     'FactoMineR',
     'factoextra',
     'caret',
