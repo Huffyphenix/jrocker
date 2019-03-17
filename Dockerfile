@@ -1,7 +1,6 @@
 FROM bioconductor/release_base2:latest
-MAINTAINER Chun-Jie Liu "chunjie-sam-liu@foxmail.com"
 
-## tidyverse
+## DEPENDENCIES
 RUN apt-get update -qq \
   && apt-get -y --no-install-recommends install \
   openjdk-8-jdk \
@@ -42,19 +41,9 @@ RUN apt-get update -qq \
   \n  ggplot2.continuous.color = "viridis", \
   \n  ggplot2.continuous.fill = "viridis" \
   \n)' >> /usr/local/lib/R/etc/Rprofile.site \
-  && install2.r --error \
-    --deps TRUE \
-    tidyverse \
-    dplyr \
-    devtools \
-    formatR \
-    remotes \
-    selectr \
-    caTools \
-    pryr \
-    BiocManager 
+  && install2.r --error --deps TRUE BiocManager 
 
-
+# INSTALL R PACKAGES
 COPY install-pkgs.R /tmp/
 RUN R -f /tmp/install-pkgs.R
 

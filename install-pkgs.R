@@ -1,5 +1,15 @@
 
 pkgs <- c(
+    # tidyverse suite
+    'tidyverse',
+    'dplyr',
+    'devtools',
+    'formatR',
+    'remotes',
+    'selectr',
+    'caTools',
+    'pryr',
+    # Bioconductor packages
     "OrganismDbi",
     "ExperimentHub",
     "Biobase",
@@ -15,6 +25,7 @@ pkgs <- c(
     "SummarizedExperiment",
     "VariantAnnotation",
     "DelayedArray",
+    'ComplexHeatmap',
     "GSEABase",
     "Gviz",
     "graph",
@@ -24,13 +35,13 @@ pkgs <- c(
     "httr",
     "knitr",
     "BiocStyle",
-    # Jrocker add
+
+    # Jrocker ADD
+    # machine-learning
     "MLSeq",
     "ballgown",
     "clusterProfiler",
     'rJava',
-
-    # machine-learing
     'e1071',
     'kernlab',
     'mlr',
@@ -50,6 +61,8 @@ pkgs <- c(
     'irace',
     'emoa',
     'FSelector',
+    'FNN',
+    'ROCR',
 
     # other packages
     'openxlsx',
@@ -58,15 +71,11 @@ pkgs <- c(
     'ggvis'
     )
 
-
-
 ap.db <- available.packages(contrib.url(BiocManager::repositories()))
 ap <- rownames(ap.db)
-
 pkgs_to_install <- pkgs[pkgs %in% ap]
 
 BiocManager::install(pkgs_to_install, update=FALSE, ask=FALSE)
-
 # From github
 devtools::install_github("hadley/multidplyr")
 
@@ -77,8 +86,7 @@ warnings()
 if (!is.null(warnings()))
 {
     w <- capture.output(warnings())
-    if (length(grep("is not available|had non-zero exit status", w)))
-        quit("no", 1L)
+    if (length(grep("is not available|had non-zero exit status", w))) quit("no", 1L)
 }
 
 suppressWarnings(BiocManager::install(update=TRUE, ask=FALSE))
