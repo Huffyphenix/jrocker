@@ -64,6 +64,7 @@ pkgs <- c(
     'FSelector',
     'FNN',
     'ROCR',
+    'DaMiRseq',
 
     # other packages
     'openxlsx',
