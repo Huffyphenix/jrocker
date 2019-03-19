@@ -35,6 +35,7 @@ pkgs <- c(
     "httr",
     "knitr",
     "BiocStyle",
+    'vsn',
 
     # Jrocker ADD
     # machine-learning
