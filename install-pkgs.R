@@ -71,7 +71,8 @@ pkgs <- c(
     'openxlsx',
     'gt',
     'GGally',
-    'ggvis'
+    'ggvis',
+    'VennDiagram'
     )
 
 ap.db <- available.packages(contrib.url(BiocManager::repositories()))
