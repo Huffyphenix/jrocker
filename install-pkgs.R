@@ -73,6 +73,9 @@ pkgs <- c(
     'GGally',
     'ggvis',
     'VennDiagram'
+    
+    # Huffy added
+    'ConsensusClusterPlus'
     )
 
 ap.db <- available.packages(contrib.url(BiocManager::repositories()))
